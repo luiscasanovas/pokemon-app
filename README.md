@@ -47,8 +47,8 @@ This is a simple and responsive Pokémon application that allows users to browse
 ## Setup and Installation
 
    ```bash
-   git clone https://github.com/luiscasanovas/pokemon-search-app.git
-   cd pokemon-search-app
+   git clone https://github.com/luiscasanovas/pokemon-app.git
+   cd pokemon-app
    npm install
    npm run dev
 ```
