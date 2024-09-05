@@ -43,14 +43,14 @@ const SearchBar = ({ onSearchChange, onSuggestionsVisible }) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
     setErrorMessage('');
-    setVisibleCount(10); // Reset visible count when a new search query is typed
+    setVisibleCount(10); 
 
     if (query.length > 0) {
       const filteredSuggestions = allPokemon.filter(pokemon =>
         pokemon.name.startsWith(query)
       );
       setSuggestions(filteredSuggestions);
-      onSuggestionsVisible(filteredSuggestions.length > 0); // Set visibility to true if suggestions are present
+      onSuggestionsVisible(filteredSuggestions.length > 0); 
       if (filteredSuggestions.length === 0) {
         setErrorMessage(`No Pokémon found with the name "${query}".`);
       } else {
@@ -58,7 +58,7 @@ const SearchBar = ({ onSearchChange, onSuggestionsVisible }) => {
       }
     } else {
       setSuggestions([]);
-      onSuggestionsVisible(false); // Hide suggestions when the query is empty
+      onSuggestionsVisible(false); 
       setErrorMessage('');
     }
   };
@@ -79,7 +79,7 @@ const SearchBar = ({ onSearchChange, onSuggestionsVisible }) => {
     if (matchedPokemon) {
       router.push(`/details/${searchQuery.toLowerCase()}`);
       setErrorMessage('');
-      onSuggestionsVisible(false); // Hide suggestions after search
+      onSuggestionsVisible(false); 
     } else {
       setErrorMessage(`No Pokémon found with the name "${searchQuery}".`);
     }
@@ -95,7 +95,7 @@ const SearchBar = ({ onSearchChange, onSuggestionsVisible }) => {
           placeholder="Search Pokémon"
           className="form-control me-2"
           disabled={loading}
-          style={{ borderRadius: '5px' }}  // Rounded search bar
+          style={{ borderRadius: '5px' }}  
         />
         <button type="submit" className="btn btn-primary" disabled={loading}>
           {loading ? 'Loading...' : 'Search'}
@@ -121,7 +121,7 @@ const SearchBar = ({ onSearchChange, onSuggestionsVisible }) => {
               className="list-group-item bg-light text-dark"
               onClick={() => {
                 router.push(`/details/${suggestion.name.toLowerCase()}`);
-                onSuggestionsVisible(false); // Hide suggestions after clicking a result
+                onSuggestionsVisible(false); 
               }}
               style={{ cursor: 'pointer' }}
             >

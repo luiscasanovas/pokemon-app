@@ -30,7 +30,7 @@ const PokeList = ({ pokemon, onSearchChange, loading, pokemonCount }) => {
               <th>ID</th>
               <th>Name</th>
               <th style={{ width: '200px' }}>Types</th>
-              <th className="hideOnMobile text-center">Details</th> {/* Move "Details" column to the far right */}
+              <th className="hideOnMobile text-center">Details</th> 
             </tr>
           </thead>
           <tbody>
